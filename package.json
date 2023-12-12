@@ -3,7 +3,7 @@
     "build": "tsc",
     "format": "eslint . --fix && prettier --write .",
     "lint": "eslint . && prettier --check .",
-    "prepare": "npm run lint && ncc build src/index.ts --minify --source-map"
+    "prepare": "ncc build src/index.ts --minify --source-map"
   },
   "dependencies": {
     "@actions/artifact": "^1.1.1",
