@@ -262,7 +262,9 @@ async function run() {
   try {
     await main()
   } catch (error) {
-    await uploadLogs()
+    if (core.getInput('upload-logs') == 'on-failure') {
+      await uploadLogs()
+    }
 
     const id = `${process.env.GITHUB_RUN_ID}`
     const slug = process.env.GITHUB_REPOSITORY
